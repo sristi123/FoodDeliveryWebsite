@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food delivery website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <section class="order" id="order">
+
+        <h3 class="sub-heading"> order now </h3>
+        <h1 class="heading"> Fast Service </h1>
+
+        <form action="index.php" method="post">
+
+            <div class="inputBox">
+                <div class="input">
+                    <span>your name</span>
+                    <input type="text" placeholder="enter your name" id="fname" name="uname" onkeypress="sss()" required>
+                    <script>
+                        $(document).ready(function() {
+                            $("#fname").keypress(function(e) {
+                                var key = e.keyCode;
+                                if (key >= 48 && key <= 57) {
+                                    e.preventDefault();
+                                }
+                            });
+
+                        });
+                    </script>
+                </div>
+                <div class="input">
+                    <span>your number</span>
+                    <input type="text" placeholder="enter your number" id="phone" name="mob" onkeypress="return isNumber(event)" minlength="10" maxlength="10" required />
+                    <script>
+                        function isNumber(evt) {
+                            evt = (evt) ? evt : window.event;
+                            var charCode = (evt.which) ? evt.which : evt.keyCode;
+                            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                                return false;
+                            }
+                            return true;
+
+                        }
+                    </script>
+
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>your order</span>
+                    <select name="food" id="itemfood">
+                 <optgroup label="our menu">
+                    <optgroup label="veg">
+                    <option value="pizza">pizza(Rs250)</option>
+                    <option value="burger">burger(Rs190)</option>
+                   <option value="MANCHURIAN">MANCHURIAN(Rs200)</option>
+                     <option value="JINNI DOSA">JINNI DOSA(Rs112)</option>
+                     <option value="paneer tikka">paneer tikka(Rs200)</option>
+                </optgroup>
+                    <optgroup label="non-veg">
+                       <option value="TANDOORI CHICKEN" >TANDOORI CHICKEN(Rs290)</option>
+                       <option value="TANGY FISH FRY">TANGY FISH FRY(Rs310)</option>
+                      <option value=" biryani"> biryani(Rs300)</option>
+                 </optgroup>
+                </optgroup>
+                 
+               </select>
+                </div>
+                <div class="input">
+                    <span>additional food</span>
+                    <select name="extra_food" id="itemfood1" required>
+                        <optgroup label="MOCKTAILS">
+                            <option value="COSMOJITO">COSMOJITO(Rs130)</option>
+                             <option value=" COLD BREW BLACK"> COLD BREW BLACK(Rs120)</option>
+                             <option value=" KIWI THYME"> KIWI THYME(Rs120)</option>
+                             <option value="MOJITO">MOJITO(Rs120)</option>
+                            </optgroup>
+                         <optgroup label="DESSERTS" >
+                             <option value="tiramisu "> tiramisu(Rs120)</option>
+                             <option value="Chocolate Cheesecake">Chocolate Cheesecake(Rs120)</option>
+                             <option value=" Hazelnut Tart"> Hazelnut Tart(Rs120)</option>
+                             <option value="CHOCO LAVA">CHOCO LAVA(Rs120)</option>
+                         </optgroup>
+                 
+               </select>
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>how much</span>
+                    <input type="number" onkeypress="return event.charCode >= 48" min="1" placeholder="how many orders" name="quantity" required>
+                </div>
+                <div class="input">
+                    <span id="date-time">date and time</span>
+                    <input type="datetime-local">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>your address</span>
+                    <textarea placeholder="enter your address" id="" cols="30" rows="10" name="address" required></textarea>
+                </div>
+                <!-- <div class="input">
+                    <span>Enter Amount</span>
+                    <input type="number" onkeypress="return event.charCode >= 48" min="0" placeholder="Enter amount" name="money" id="amount">
+                </div> -->
+            </div>
+
+            <input type="submit" value="order now" class="btn" name="submit">
+
+        </form>
+
+    </section>
+
+
+    <!-- order section ends -->
+
+</body>
+
+</html>
